@@ -23,7 +23,7 @@ public class Flashlight : MonoBehaviour
         {
             batteryPower -= time * Time.deltaTime;
         }
-        if (batteryPower < 280)
+        if (batteryPower < 60)
         {
             InvokeRepeating("Fade", 1f, 1f);
         }
