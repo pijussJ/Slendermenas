@@ -23,9 +23,14 @@ public class Flashlight : MonoBehaviour
         {
             batteryPower -= time * Time.deltaTime;
         }
-        while (batteryPower < 280)
+        if (batteryPower < 280)
         {
-            light.enabled = !light.enabled;
+            InvokeRepeating("Fade", 1f, 1f);
         }
+
+    }
+    void Fade()
+    {
+        light.intensity -= 1f - batteryPower / 300f;
     }
 }
